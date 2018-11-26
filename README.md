@@ -2,7 +2,7 @@
 
 this repo is initially cloned from https://bitbucket.org/headcount_bimandscan/bimserver-docker.
 
-Please be aware, that [BIMserver](https://www.bimserver.org) has a different license.
+Please be aware, that [BIMserver](http://bimserver.org) has a different license.
 
 ## Credits
 
