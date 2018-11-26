@@ -1,0 +1,8 @@
+language: ruby
+
+services:
+  - docker
+
+script:
+  - docker build -t muenchhausen/docker-bimserver .
+
