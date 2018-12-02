@@ -16,6 +16,7 @@ COPY ./default.policy /usr/local/tomcat/conf/default.policy
 
 EXPOSE 8080
 VOLUME /var/bimserver/home
+HEALTHCHECK --interval=5s --timeout=500ms --retries=1 CMD curl --fail http://localhost:8080/ || exit 1
+
 CMD ["catalina.sh", "run"]
 
-HEALTHCHECK --interval=5m --timeout=3s CMD curl -f http://localhost:8080/ || exit 1

@@ -5,4 +5,15 @@ services:
 
 script:
   - docker build -t muenchhausen/docker-bimserver .
+  - docker run --name docker-bimserver --rm -d -p 8888:8080 muenchhausen/docker-bimserver
+  - docker ps -a
+  - |
+    echo "healthcheck start"
 
+    until [ $(docker ps --format "table {{.Names}}" -f health=healthy | grep docker-bimserver) ]
+    do
+      echo "healthcheck retry"
+      sleep 5
+    done
+
+    echo "healthcheck success"
